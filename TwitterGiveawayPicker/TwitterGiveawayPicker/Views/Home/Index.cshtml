@@ -1,0 +1,27 @@
+﻿@model TwitterGiveawayPicker.Models.AuthResponse;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+        $("#btnAuth").click(function () {
+            $("dvAuthResult").load('@(Url.Action("Authenticate", "Home"))');
+        });
+</script>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <input id="btnAuth" type="button" value="Authenticate"/>
+    <div id="dvAuthResult"style="margin-bottom: 20px">
+        
+    </div>
+    <div>
+        <label class="col-2" style="margin-bottom:20px">Tweet ID:</label>
+        <input class="col-lg-2" style="width:300px;" />
+    </div>
+    <div>
+        <input type="button" value="Pick a winner!" />
+    </div>
+</div>
